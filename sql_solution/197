@@ -1,7 +1,7 @@
 select today.id
-FROM Weather yesterday CROSS JOIN Weather today
-where datediff(today.recordDate,yesterday.recordDate)=1
-and today.temperature > yesterday.temperature
+FROM Weather yesterday INNER JOIN Weather today
+on datediff(today.recordDate,yesterday.recordDate)=1
+where today.temperature > yesterday.temperature
 
 --used self-join to join weather table to itself creating two copies today and yesterday
 and used datediff function to ensure today is 1 day after yesterday
