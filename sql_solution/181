@@ -2,3 +2,8 @@ select e.name AS Employee
 from Employee e join Employee m
 on e.managerId=m.id
 where e.salary>m.salary
+
+--used an INNER JOIN to compare salaries within the single Employee table. 
+It aliases the table twice (e for Employee and m for Manager) and
+links them using the condition: e.managerId = m.id. 
+It then filters the result using WHERE e.salary > m.salary.
