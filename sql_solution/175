@@ -1,3 +1,6 @@
 select Person.firstname, Person.lastName, Address.city,Address.state
 from Person
 left join Address ON person.personId=Address.personId;
+
+--uses a left join to combine person and address table 
+ this ensure every row from the left table(person table)is included --
