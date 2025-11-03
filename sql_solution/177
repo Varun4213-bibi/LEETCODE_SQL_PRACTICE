@@ -1,0 +1,15 @@
+CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
+BEGIN
+  set N=N-1;
+  RETURN (
+    select distinct salary 
+    from employee
+    order by salary desc limit 1 offset N
+  );
+END
+
+-- Summary: Used LIMIT and OFFSET to get the Nth highest salary.
+-- We subtract 1 from N because OFFSET starts from 0.
+-- The query sorts salaries in descending order, skips (N-1) rows,
+-- and returns the next one as the Nth highest salary.
+-- If there’s no such salary, it returns NULL.
