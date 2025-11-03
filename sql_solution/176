@@ -1,0 +1,8 @@
+select(select Distinct salary 
+from Employee 
+order by  salary desc
+limit 1 offset 1)
+as SecondHighestSalary 
+
+--order the salary row descending order and  select only distinct value
+--select the secod highest salary using limit 1 and offset 1 it skips the first row and select the second highest salary
